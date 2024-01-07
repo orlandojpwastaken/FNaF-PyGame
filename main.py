@@ -2,10 +2,6 @@ import pygame
 
 from pygame import mixer
 
-import sys
-
-import os
-
 from game_classes import *
 
 from enemy import Enemy

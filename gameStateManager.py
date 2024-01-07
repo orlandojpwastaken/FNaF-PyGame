@@ -1,10 +1,6 @@
 import pygame
 
-import sys
-
 import eventHandler as eh
-
-import ui
 
 import random
 
