@@ -1,5 +1,4 @@
 import pygame
-from pygame.locals import *
 
 class Assets:
     """Class for imported assets"""

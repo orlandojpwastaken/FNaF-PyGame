@@ -1,6 +1,4 @@
 import pygame
-import time
-from random import seed
 from random import randint
 
 class Enemy:
@@ -47,7 +45,6 @@ class Enemy:
     def __generateMoveOpp(self):
         """Generates a random integer value which will be used as to determine whether enemies will move forward or not."""
         self.opportunity_value = randint(1, 20)
-        # print(self.opportunity_value)
         
     def movementOpportunity(self, game_settings, screen, camera_system, assets):
         """Commences the movement opportunity"""

@@ -5,6 +5,7 @@ import sys
 def __checkKeypress(game_settings, event, door1, door2, camera_system, power_system, assets):
     """Checks for key press events."""
     if event.key == pygame.K_ESCAPE:
+        pygame.quit()
         sys.exit()
     if game_settings.night_ongoing:
         if event.key == pygame.K_a:
@@ -36,6 +37,7 @@ def checkEvents(game_settings, screen, assets, door1, door2, camera_system, powe
     """Makes it so that the game will respond to user input/keypresses"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            pygame.quit()
             sys.exit()
         if event.type == pygame.KEYDOWN:
             __checkKeypress(game_settings, event, door1, door2, camera_system, power_system, assets)
