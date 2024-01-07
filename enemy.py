@@ -75,7 +75,7 @@ class Enemy:
                 self.__killsYou(game_settings, screen, assets)
             self.__updateCameraAssociation(camera_system)
     
-    def __getCurrentRoomIndex(self):
+    def getCurrentRoomIndex(self):
         """Gets the index of the room the enemy is in in order to move them forward up the list upon movement"""
         room_index = self.movement_Pattern.index(self.currentPos)
         return room_index
