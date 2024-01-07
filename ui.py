@@ -48,8 +48,6 @@ class HUD:
         power_surface = self.font.render(power_text, True, (255, 255, 255))
         power_rect = power_surface.get_rect(bottomleft=usage_rect.topleft)
         power_rect.y -= game_settings.ASSETS_MARGIN
-        
-
                 
         screen.blit(power_surface, power_rect)
         screen.blit(usage_surface, usage_rect)
