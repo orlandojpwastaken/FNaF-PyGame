@@ -19,13 +19,13 @@ class Settings():
         
         # Timers
         # The duration for one in-game hour (in milliseconds)
-        self.HOUR_DURATION = 60 * 1000
-        
-        # The duration for one in-game night (6 in-game hours)
-        self.NIGHT_DURATION =  6 * self.HOUR_DURATION
+        self.HOUR_DURATION = 10 * 1000
         
         # How much time has passed
         self.hour_counter = 0
+        
+        # Win Condition
+        self.hours_win_condition = 6
 
         # Sets a hour one event to update the timer as well as increase the AI level
         self.ONE_HOUR_EVENT = pygame.USEREVENT + 7

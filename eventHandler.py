@@ -137,7 +137,7 @@ def cameraBlitConditions(screen, screen_rect, assets, camera_system, enemies=lis
             
 def checkSurvival(game_settings):
     """Check if the player survived the night"""
-    if game_settings.hour_counter >= 6:
+    if game_settings.hour_counter >= game_settings.hours_win_condition:
         # print("Congratulations! You survived the night!")
         return True  # Change the game state to the win state
     return False

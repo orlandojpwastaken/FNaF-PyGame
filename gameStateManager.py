@@ -28,7 +28,7 @@ def handleGameStates(game_settings, screen, screen_rect, hud_manager, assets, do
     elif game_settings.night_win == True:
         assets.office_ambience.stop()
         screen.blit(assets.black_screen, (0, 0))
-        screen.blit(assets.paycheck, assets.newspaper_rect)
+        screen.blit(assets.paycheck, assets.paycheck_rect)
             
         if not game_settings.audio_played:
             assets.night_end.play(0)
