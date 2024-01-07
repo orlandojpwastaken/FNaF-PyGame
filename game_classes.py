@@ -8,12 +8,12 @@ class Door:
         self.name = name
         self.is_open = True
         
-    def openDoor(self):
+    def __openDoor(self):
         """Opens the door and decreases power level consumption."""
         self.is_open = True
         self.power_sys.drainLevelDown()
         
-    def closeDoor(self):
+    def __closeDoor(self):
         """Closes the door and increases power level consumption."""
         self.is_open = False
         self.power_sys.drainLevelUp()
@@ -22,9 +22,9 @@ class Door:
         """Toggles the state of the door between opened and closed."""
         pygame.mixer.Channel(4).play(assets.door_toggle)
         if self.is_open == True:
-            self.closeDoor()
+            self.__closeDoor()
         else:
-            self.openDoor()
+            self.__openDoor()
 
 class PowerSystem:
     def __init__(self):
@@ -94,14 +94,14 @@ class CameraSystem:
             camera.enemies = enemies if enemies else []
         
     # Function which is used when user uses the camera
-    def cameraOn(self, assets):
+    def __cameraOn(self, assets):
         """Activates the cameras"""
         self.camera_active = True
         self.power_sys.drainLevelUp()
         pygame.mixer.Channel(5).play(assets.camera_on)
     
     # Function for when users put the camera
-    def cameraOff(self, assets):
+    def __cameraOff(self, assets):
         """Deactivates the cameras"""
         self.camera_active = False
         self.power_sys.drainLevelDown()
@@ -110,7 +110,7 @@ class CameraSystem:
 
     def toggleCamera(self, assets):
         if not self.camera_active:
-            self.cameraOn(assets)
+            self.__cameraOn(assets)
 
             # If the camera system is opened for the first time, view the first camera in the list
             if self.last_viewed_camera is None and self.camera_list:
@@ -127,9 +127,9 @@ class CameraSystem:
             for camera in self.camera_list:
                 camera.isMonitored = False
 
-            self.cameraOff(assets)
+            self.__cameraOff(assets)
             
-    def addCamera(self, camera_id):
+    def __addCamera(self, camera_id):
         new_camera = Camera(camera_id)
         self.camera_list.append(new_camera)
         
@@ -150,14 +150,14 @@ class CameraSystem:
             self.last_viewed_camera = self.current_cam
             
     def setupCameras(self):
-        self.addCamera("1a")
-        self.addCamera("1b")
-        self.addCamera("2a")
-        self.addCamera("2b")
-        self.addCamera("3")
-        self.addCamera("4a")
-        self.addCamera("4b")
-        self.addCamera("5")
+        self.__addCamera("1a")
+        self.__addCamera("1b")
+        self.__addCamera("2a")
+        self.__addCamera("2b")
+        self.__addCamera("3")
+        self.__addCamera("4a")
+        self.__addCamera("4b")
+        self.__addCamera("5")
 
     def updateEnemyCameraAssociation(self, enemy):
         """Update the association of an enemy with cameras based on its currentPos."""
