@@ -87,7 +87,7 @@ def handleGameStates(game_settings, screen, screen_rect, hud_manager, assets, do
                 jumpscare_delay = 30  # Delay between jumpscare frames
 
                 while jumpscare_index < len(assets.blackout_jumpscare_animation):
-                    screen.blit(assets.blackout_jumpscare_animation[jumpscare_index], assets.newspaper_rect)
+                    screen.blit(assets.blackout_jumpscare_animation[jumpscare_index], assets.paycheck_rect)
                     pygame.display.flip()
                     pygame.time.delay(jumpscare_delay)
                     jumpscare_index += 1
