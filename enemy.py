@@ -53,7 +53,7 @@ class Enemy:
         """Commences the movement opportunity"""
         self.__generateMoveOpp() # Generates the movement opportunity value
         if  self.current_ai_Level >= self.opportunity_value:
-            room_index = self.getCurrentRoomIndex()
+            room_index = self.__getCurrentRoomIndex()
             
             # If enemy is in anywhere before the second from last item of their movement pattern list
             if room_index < len(self.movement_Pattern) - 2: 
@@ -75,7 +75,7 @@ class Enemy:
                 self.__killsYou(game_settings, screen, assets)
             self.__updateCameraAssociation(camera_system)
     
-    def getCurrentRoomIndex(self):
+    def __getCurrentRoomIndex(self):
         """Gets the index of the room the enemy is in in order to move them forward up the list upon movement"""
         room_index = self.movement_Pattern.index(self.currentPos)
         return room_index
