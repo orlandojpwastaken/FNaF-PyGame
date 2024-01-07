@@ -173,6 +173,7 @@ class Assets:
         
         # Menus
         self.paycheck = pygame.image.load("assets/images/menu/screens/2.png").convert()
+        self.paycheck_rect = self.paycheck.get_rect(center=screen_rect.center)
         
 
         # Game Over
