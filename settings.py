@@ -19,7 +19,7 @@ class Settings():
         
         # Timers
         # The duration for one in-game hour (in milliseconds)
-        self.HOUR_DURATION = 10 * 1000
+        self.HOUR_DURATION = 60 * 1000
         
         # How much time has passed
         self.hour_counter = 0
