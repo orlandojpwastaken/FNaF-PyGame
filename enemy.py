@@ -53,7 +53,7 @@ class Enemy:
         """Commences the movement opportunity"""
         self.__generateMoveOpp() # Generates the movement opportunity value
         if  self.current_ai_Level >= self.opportunity_value:
-            room_index = self.__getCurrentRoomIndex()
+            room_index = self.getCurrentRoomIndex()
             
             # If enemy is in anywhere before the second from last item of their movement pattern list
             if room_index < len(self.movement_Pattern) - 2: 
