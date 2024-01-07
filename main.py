@@ -27,7 +27,7 @@ def run_game():
     screen = pygame.display.set_mode(
         (game_settings.screen_width, game_settings.screen_height))
     screen_rect = screen.get_rect()
-    pygame.display.set_caption("OHHOLERO CZI TO FREDDY FAZBEAR!? HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR HOR")
+    pygame.display.set_caption("Just One Night at Freddy Fazbear's")
     
     clock = pygame.time.Clock()
     
