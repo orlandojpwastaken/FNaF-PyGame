@@ -38,7 +38,7 @@ class PowerSystem:
         self.current_power = self.total_power
         
         # Default level of power consumption 
-        # Level increases by 1 for every oject 
+        # Level increases by 1 for every utility used/removed
         self.power_consumption = 1 
     
     def drainPower(self):
@@ -135,7 +135,6 @@ class CameraSystem:
         
     def viewCamera(self, camera_id, assets):
         if not self.camera_active:
-            # print("Error: Camera system is not active.")
             return
 
         for camera in self.camera_list:
@@ -149,7 +148,6 @@ class CameraSystem:
 
         if self.current_cam:
             self.last_viewed_camera = self.current_cam
-            # print(f"Viewing {self.current_cam}")
             
     def setupCameras(self):
         self.addCamera("1a")

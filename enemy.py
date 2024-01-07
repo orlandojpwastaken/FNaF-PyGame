@@ -51,8 +51,6 @@ class Enemy:
         
     def movementOpportunity(self, game_settings, screen, camera_system, assets):
         """Commences the movement opportunity"""
-        # print ("----------------------------------------------------------------------")
-        # print(f"The movement opportunity has arrived for {self.name}")
         self.__generateMoveOpp() # Generates the movement opportunity value
         if  self.current_ai_Level >= self.opportunity_value:
             room_index = self.getCurrentRoomIndex()
@@ -60,7 +58,6 @@ class Enemy:
             # If enemy is in anywhere before the second from last item of their movement pattern list
             if room_index < len(self.movement_Pattern) - 2: 
                 self.__roomAdvance(room_index, assets)
-                # print(f"moved forward, now in room {self.currentPos}")
                 
             # If enemy is in the second from last item of their movement pattern list   
             elif room_index == len(self.movement_Pattern) - 2:
@@ -86,7 +83,6 @@ class Enemy:
     def __roomAdvance(self, room_index, assets):
         """Moves the enemy to the next room in their movement pattern list"""
         self.currentPos = self.movement_Pattern[room_index +1]
-        # print(f"{self.name} is now in {self.currentPos} and has succesfully moved closer to you")
         if self.currentPos == len(self.movement_Pattern) - 1:
             pygame.mixer.Channel(2).play(assets.windowscare, 0)
         else:

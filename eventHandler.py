@@ -45,13 +45,10 @@ def checkEvents(game_settings, screen, assets, door1, door2, camera_system, powe
             for enemy in enemies:
                 if event.type == enemy.movement_event:
                     enemy.movementOpportunity(game_settings, screen, camera_system, assets)
-                    # print(f"{enemy.name} is currently in room {enemy.currentPos}")
-                    # print(f"------------------------------------------------------")
             if event.type == game_settings.ONE_HOUR_EVENT:
                 game_settings.hour_counter += 1
                 for enemy in enemies:
                     enemy.difficultyUp()
-                # print(f"AI levels increased!")
             if power_system.current_power <= 0:
                 game_settings.night_ongoing = False
                 game_settings.blackout = True
@@ -138,6 +135,5 @@ def cameraBlitConditions(screen, screen_rect, assets, camera_system, enemies=lis
 def checkSurvival(game_settings):
     """Check if the player survived the night"""
     if game_settings.hour_counter >= game_settings.hours_win_condition:
-        # print("Congratulations! You survived the night!")
         return True  # Change the game state to the win state
     return False
